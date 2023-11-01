@@ -75,8 +75,9 @@ void *convolute(void* threadarg){
     Image *srcImage = my_data->srcImage;
     Image *destImage = my_data->destImage;
     Matrix algorithm;
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    int i,j;
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
             algorithm[i][j] = my_data->algo[i][j];
         }
     }
@@ -148,8 +149,9 @@ int main(int argc,char** argv){
     for (thread = 0; thread<thread_count; thread++){
         thread_data[thread].srcImage = &srcImage;
         thread_data[thread].destImage = &destImage;
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; ++j){
+        int i,j;
+        for( i = 0; i < 3; i++){
+            for( j = 0; j < 3; ++j){
                 thread_data[thread].algo[i][j] = algorithms[type][i][j];  
             }
         }
