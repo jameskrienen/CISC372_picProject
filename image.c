@@ -68,7 +68,7 @@ uint8_t getPixelValue(Image* srcImage,int x,int y,int bit,Matrix algorithm){
 //            algorithm: The kernel matrix to use for the convolution
 //Returns: Nothing
 //Image* srcImage,Image* destImage,Matrix algorithm
-void *convolute(void* threadarg){
+void *thread_convolute(void* threadarg){
 
     Thread_data* my_data = (Thread_data*)threadarg;
     
@@ -161,7 +161,7 @@ int main(int argc,char** argv){
         } else {
             thread_data[thread].end = (thread + 1) * thread_section;
         }
-        pthread_create(&thread_handles[thread], NULL, &convolute, (void *) &thread_data[thread]);
+        pthread_create(&thread_handles[thread], NULL, &thread_convolute, (void *) &thread_data[thread]);
     }
 
     // for (thread = 0; thread < thread_count; thread++) {
