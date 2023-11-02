@@ -1,0 +1,17 @@
+Script started on Wed Nov  1 21:43:42 2023
+]0;jameskri@r1n12.darwin:~/CISC372_picProject[?1034h[jameskri@r1n12 CISC372_picProject]$ srun image .? /image piv c. 1.jpg edge
+Usage: image <filename> <type>
+	where type is one of (edge,sharpen,blur,gauss,emboss,identity)
+srun: error: r1n12: task 0: Exited with exit code 255
+]0;jameskri@r1n12.darwin:~/CISC372_picProject[jameskri@r1n12 CISC372_picProject]$ srun image ./image pic1.jpg edge    gauss     blur
+Usage: image <filename> <type>
+	where type is one of (edge,sharpen,blur,gauss,emboss,identity)
+srun: error: r1n12: task 0: Exited with exit code 255
+]0;jameskri@r1n12.darwin:~/CISC372_picProject[jameskri@r1n12 CISC372_picProject]$ srun image ./image pic1.jpg blur[1P[1P[1P[1P[1P[1P ./image pic1.jpg blur    edge
+Took 6 seconds
+]0;jameskri@r1n12.darwin:~/CISC372_picProject[jameskri@r1n12 CISC372_picProject]$ srun ./image pic1.jpg edgee[1@_[1@o[1@p[1@e[1@n[1@m[1@p pic1.jpg edge
+Took 6 seconds
+]0;jameskri@r1n12.darwin:~/CISC372_picProject[jameskri@r1n12 CISC372_picProject]$ ei xit
+exit
+
+Script done on Wed Nov  1 21:45:26 2023
